@@ -1,0 +1,36 @@
+#!/usr/bin/env ruby
+require 'rubygems'
+require 'optparse'
+require "#{File.dirname(__FILE__)}/../lib/singleserving"
+
+options = { :port => 4337,
+           :timeout => 300}
+
+OptionParser.new do |opts|
+  opts.summary_width = 25
+
+  opts.banner = "singleserve: http server for sharing"
+
+  opts.on('--help', "Print this message") do
+    puts "#{opts}\n"
+    exit
+  end
+
+  opts.on('--version', "Print the version") do
+    puts "singleserving #{SingleServing.version}"
+    exit
+  end
+
+  opts.on('-p' '--port=PORT', "Port to listen on (Default: #{options[:port]})") do |port|
+    options[:port] = port
+  end
+
+
+end.parse!
+
+if ARGV.length > 0
+  SingleServing.serve(ARGV, options)
+  exit
+end
+
+puts "Invalid option, run `singleserve --help` for usage"
