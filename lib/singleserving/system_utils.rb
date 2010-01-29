@@ -9,5 +9,11 @@ module SingleServing
     def self.hostname
       Socket.gethostname
     end
+
+    def self.pbcopy(str)
+      system "ruby -e \"print '#{str}'\" | pbcopy"
+    rescue
+      raise "Copy to clipboard failed"
+    end
   end
 end

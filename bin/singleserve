@@ -29,7 +29,7 @@ OptionParser.new do |opts|
 end.parse!
 
 if ARGV.length > 0
-  SingleServing.serve(ARGV, options)
+  SingleServing.serve(ARGV[0], options)
   exit
 end
 
