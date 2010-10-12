@@ -5,8 +5,8 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "singleserving"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = %Q{Single Serving web server for sharing files}
+    gem.description = %Q{Single Serving web server for sharing files over the local network}
     gem.email = "csexton@gmail.com"
     gem.homepage = "http://github.com/csexton/singleserving"
     gem.authors = ["Christopher Sexton"]
